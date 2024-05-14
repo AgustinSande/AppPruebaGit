@@ -1,8 +1,10 @@
-﻿namespace AppPrueba.Models
+﻿using System.ComponentModel.DataAnnotations;
+
+namespace AppPrueba.Models
 {
-    public class Teacher : Employee
+    public class Teacher : Population
     {
-        public int TeacherId { get; set; }
+        
         public List<Course> Courses { get; set; }
         public List<Student> Students { get; set; }
         

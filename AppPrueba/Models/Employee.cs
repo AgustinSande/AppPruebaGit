@@ -1,8 +1,6 @@
-﻿using AppPrueba.Entities;
-
-namespace AppPrueba.Models
+﻿namespace AppPrueba.Models
 {
-    public class Employee : Person
+    public class Population : Person
     {
         public int Salary { get; set; }
         public int InstitutionId { get; set; }
