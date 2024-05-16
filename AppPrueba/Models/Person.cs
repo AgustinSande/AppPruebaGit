@@ -13,5 +13,18 @@ namespace AppPrueba.Models
 
         public string NormalizedSurname { get; set; }
 
+        public string Address { get; set; }
+        public DateTime? DateOfBirth { get; set; }
+        public int Gender { get; set; }
+        public string Nationality { get; set; }
+
+
+
     }
+    public enum Gender
+    {
+        Male, Female, Other
+    }
+
+
 }

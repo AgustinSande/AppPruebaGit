@@ -4,6 +4,7 @@ using AppPrueba.Data;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
 using Microsoft.EntityFrameworkCore.Metadata;
+using Microsoft.EntityFrameworkCore.Migrations;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 
 #nullable disable
@@ -11,9 +12,11 @@ using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 namespace AppPrueba.Migrations
 {
     [DbContext(typeof(ApplicationDbContext))]
-    partial class ApplicationDbContextModelSnapshot : ModelSnapshot
+    [Migration("20240516135440_update")]
+    partial class update
     {
-        protected override void BuildModel(ModelBuilder modelBuilder)
+        /// <inheritdoc />
+        protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder
@@ -89,24 +92,24 @@ namespace AppPrueba.Migrations
 
                     b.HasKey("Id");
 
-                    b.ToTable("People", (string)null);
+                    b.ToTable("People");
 
                     b.UseTptMappingStrategy();
                 });
 
-            modelBuilder.Entity("AppPrueba.Models.StudentCourse", b =>
+            modelBuilder.Entity("CourseStudent", b =>
                 {
-                    b.Property<int>("StudentId")
+                    b.Property<int>("CoursesAttendedCourseId")
                         .HasColumnType("int");
 
-                    b.Property<int>("CourseId")
+                    b.Property<int>("StudentsId")
                         .HasColumnType("int");
 
-                    b.HasKey("StudentId", "CourseId");
+                    b.HasKey("CoursesAttendedCourseId", "StudentsId");
 
-                    b.HasIndex("CourseId");
+                    b.HasIndex("StudentsId");
 
-                    b.ToTable("StudentCourses");
+                    b.ToTable("CourseStudent");
                 });
 
             modelBuilder.Entity("AppPrueba.Models.Employee", b =>
@@ -171,7 +174,7 @@ namespace AppPrueba.Migrations
             modelBuilder.Entity("AppPrueba.Models.Course", b =>
                 {
                     b.HasOne("AppPrueba.Models.Teacher", "Teacher")
-                        .WithMany("Courses")
+                        .WithMany("CoursesTaught")
                         .HasForeignKey("TeacherId")
                         .OnDelete(DeleteBehavior.Restrict)
                         .IsRequired();
@@ -179,23 +182,19 @@ namespace AppPrueba.Migrations
                     b.Navigation("Teacher");
                 });
 
-            modelBuilder.Entity("AppPrueba.Models.StudentCourse", b =>
+            modelBuilder.Entity("CourseStudent", b =>
                 {
-                    b.HasOne("AppPrueba.Models.Course", "Course")
-                        .WithMany("StudentCourses")
-                        .HasForeignKey("CourseId")
+                    b.HasOne("AppPrueba.Models.Course", null)
+                        .WithMany()
+                        .HasForeignKey("CoursesAttendedCourseId")
                         .OnDelete(DeleteBehavior.Cascade)
                         .IsRequired();
 
-                    b.HasOne("AppPrueba.Models.Student", "Student")
-                        .WithMany("StudentCourses")
-                        .HasForeignKey("StudentId")
+                    b.HasOne("AppPrueba.Models.Student", null)
+                        .WithMany()
+                        .HasForeignKey("StudentsId")
                         .OnDelete(DeleteBehavior.Cascade)
                         .IsRequired();
-
-                    b.Navigation("Course");
-
-                    b.Navigation("Student");
                 });
 
             modelBuilder.Entity("AppPrueba.Models.Employee", b =>
@@ -234,19 +233,9 @@ namespace AppPrueba.Migrations
                         .IsRequired();
                 });
 
-            modelBuilder.Entity("AppPrueba.Models.Course", b =>
-                {
-                    b.Navigation("StudentCourses");
-                });
-
-            modelBuilder.Entity("AppPrueba.Models.Student", b =>
-                {
-                    b.Navigation("StudentCourses");
-                });
-
             modelBuilder.Entity("AppPrueba.Models.Teacher", b =>
                 {
-                    b.Navigation("Courses");
+                    b.Navigation("CoursesTaught");
                 });
 #pragma warning restore 612, 618
         }

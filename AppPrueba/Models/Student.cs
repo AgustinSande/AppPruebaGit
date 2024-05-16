@@ -2,15 +2,21 @@
 
 namespace AppPrueba.Models
 {
-    public class Student : Population
+    public class Student : Person
     {
         
-        public int SchoolFile { get; set; } 
-        //public List<Course>  Courses{ get; set; }
-        //public int InstitutionId { get; set; }  
-        //public virtual Institution Institution { get; set; }
-        //public int TeacherId { get; set; }
-        //public Teacher Teacher { get; set; }
+        public int SchoolFile { get; set; }
+        public DateTime? EnrollmentDate { get; set; }
+        public DateTime? EnrollmentEndDate { get; set; }
+
+        public int GradeLevel { get; set; }
+
+        
+        public List<StudentCourse> StudentCourses { get; set; }
+        
 
     }
+
+
+    
 }

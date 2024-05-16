@@ -1,0 +1,15 @@
+D:\AppPrueba\DAL\bin\Debug\net8.0\DAL.deps.json
+D:\AppPrueba\DAL\bin\Debug\net8.0\DAL.runtimeconfig.json
+D:\AppPrueba\DAL\bin\Debug\net8.0\DAL.dll
+D:\AppPrueba\DAL\bin\Debug\net8.0\DAL.pdb
+D:\AppPrueba\DAL\obj\Debug\net8.0\DAL.csproj.AssemblyReference.cache
+D:\AppPrueba\DAL\obj\Debug\net8.0\DAL.GeneratedMSBuildEditorConfig.editorconfig
+D:\AppPrueba\DAL\obj\Debug\net8.0\DAL.AssemblyInfoInputs.cache
+D:\AppPrueba\DAL\obj\Debug\net8.0\DAL.AssemblyInfo.cs
+D:\AppPrueba\DAL\obj\Debug\net8.0\DAL.csproj.CoreCompileInputs.cache
+D:\AppPrueba\DAL\obj\Debug\net8.0\DAL.sourcelink.json
+D:\AppPrueba\DAL\obj\Debug\net8.0\DAL.dll
+D:\AppPrueba\DAL\obj\Debug\net8.0\refint\DAL.dll
+D:\AppPrueba\DAL\obj\Debug\net8.0\DAL.pdb
+D:\AppPrueba\DAL\obj\Debug\net8.0\DAL.genruntimeconfig.cache
+D:\AppPrueba\DAL\obj\Debug\net8.0\ref\DAL.dll
